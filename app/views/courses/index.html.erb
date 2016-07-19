@@ -1,0 +1,5 @@
+<h3> Courses: </h3>
+<% courses.each do |course| %>
+  <h4><%= link_to(course.name, course) %></h4>
+  <h6>School: <%= link_to(course.school.name, course.school) %></h6>
+<% end %>

@@ -18,7 +18,7 @@ class SchoolsController < ApplicationController
   end
 
   def create
-    school = School.new(list_params)
+    school = School.new(school_params)
     if school.save
       redirect_to school
     else
