@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do
+  school = School.create!(name: Faker::Pokemon.location + ' Academy')
+  5.times do
+    teacher = Teacher.create!(school_id: school.id, name: 'Prof. ' + ['Oak', 'Elm', 'Birch', 'Rowan', 'Juniper', 'Sycamore', 'Kukui'].sample)
+    5.times do
+      Student.create!(teacher_id: teacher.id, name: Faker::Pokemon.name)
+    end
+  end
+end
