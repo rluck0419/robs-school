@@ -1,4 +1,6 @@
 <h3> Students: </h3>
 <% students.each do |student| %>
-  <h5><%= link_to(student.name, student) %></h5>
+  <h4><%= link_to(student.name, student) %></h4>
+  <h6>Teacher: <%= link_to(student.teacher.name, student.teacher) %></h6>
+  <h6>School: <%= link_to(student.teacher.school.name, student.teacher.school) %></h6>
 <% end %>
