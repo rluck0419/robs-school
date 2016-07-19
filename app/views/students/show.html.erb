@@ -1,1 +1,3 @@
-<h1> PokeCademy </h1>
+<h3>Student: <%= link_to(student.name, student) %></h3>
+<h4>Teacher: <%= link_to(student.teacher.name, student.teacher) %></h4>
+<h5>School: <%= link_to(student.teacher.school.name, student.teacher.school) %></h5>

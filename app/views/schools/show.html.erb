@@ -1,1 +1,17 @@
-<h1> PokeCademy </h1>
+<h3>School: <%= link_to(school.name, school) %></h3>
+
+<div>Teachers (<%= school.teachers.count %>): </div>
+<% school.teachers.each do |teacher| %>
+  <h4><%= link_to(teacher.name, teacher) %></h4>
+  <% teacher.students.each do |student| %>
+    <div><%= link_to(student.name, student) %></div>
+  <% end %>
+<% end %>
+
+<div>Students:
+  <% count = 0 %>
+  <% school.teachers.each do |teacher| %>
+    <% count += teacher.students.count %>
+  <% end %>
+  <%= count %>
+</div>
