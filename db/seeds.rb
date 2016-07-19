@@ -9,6 +9,7 @@
 5.times do
   school = School.create!(name: Faker::Pokemon.location + ' Academy')
   5.times do
+    Course.create!(school_id: school.id, name: ["Training 101", "Being the Very Best", "How to Catch'em'all", "Preparing for the Elite Four", "HMs and TMs: Show your moves!", "Conquering Gym Leaders", "Team Rocket: Stopping the Poke-Mafia", "Legendaries: The History of Rare Pokemon"].sample)
     teacher = Teacher.create!(school_id: school.id, name: 'Prof. ' + ['Oak', 'Elm', 'Birch', 'Rowan', 'Juniper', 'Sycamore', 'Kukui'].sample)
     5.times do
       Student.create!(teacher_id: teacher.id, name: Faker::Pokemon.name)
