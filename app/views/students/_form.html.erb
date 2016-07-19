@@ -1,0 +1,30 @@
+<div><h4><%= form_title %></h4></div>
+
+<div>
+  <% if student.errors.any? %>
+    <% student.errors.full_messages.each do |msg| %>
+      <p> <%= msg %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <%= form_for(student) do |f| %>
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <%= f.text_area :name, placeholder: Faker::Pokemon.name, class: 'form-field' %>
+    </div>
+    <div class="form-group">
+      <label for="teacher_id">Teacher ID: </label>
+      <% if student.persisted? %>
+        <p>Teachers for <%= student.teacher.school.name %>:</p>
+        <%= f.select :teacher_id, options_from_collection_for_select(student.school_teachers, :id, :name) %>
+      <% else %>
+        <%= f.select :teacher_id, options_from_collection_for_select(Teacher.all, :id, :name_with_school) %>
+      <% end %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
