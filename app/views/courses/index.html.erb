@@ -1,5 +1,7 @@
-<h3>Courses</h3>
+<h3 class="center">Courses</h3>
 <% courses.each do |course| %>
-  <h4><%= link_to(course.name, course) %></h4>
-  <h6>School: <%= link_to(course.school.name, course.school) %></h6>
+  <row>
+    <div class="six columns center teacher-row"><%= link_to(course.name, course, class:"button button-primary") %></div>
+    <div class="six columns center teacher-row school"><%= link_to(course.school.name, course.school, class:"button back-white") %></div>
+  </row>
 <% end %>
