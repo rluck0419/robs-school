@@ -1,6 +1,6 @@
-<div><h4><%= form_title %></h4></div>
+<div><h3 class="center white"><%= form_title %></h4></div>
 
-<div>
+<div class="center white">
   <% if school.errors.any? %>
     <% school.errors.full_messages.each do |msg| %>
       <p> <%= msg %></p>
@@ -10,11 +10,11 @@
 
 <div>
   <%= form_for(school) do |f| %>
-    <div class="form-group">
+    <div class="form-group center white">
       <label for="name">Name: </label>
       <%= f.text_area :name, placeholder: Faker::Pokemon.location + " Academy", class: 'form-field' %>
     </div>
-    <div class="actions">
+    <div class="actions center">
       <%= f.submit %>
     </div>
   <% end %>
