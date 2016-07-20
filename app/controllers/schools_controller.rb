@@ -1,4 +1,6 @@
 class SchoolsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  
   def show
     if School.exists?(params[:id])
       render template: 'schools/show.html.erb', locals: { school: School.find(params[:id]) }

@@ -1,4 +1,6 @@
 class TeachersController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+
   def show
     if Teacher.exists?(params[:id])
       render template: 'teachers/show.html.erb', locals: { teacher: Teacher.find(params[:id]) }

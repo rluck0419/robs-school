@@ -1,4 +1,9 @@
 <h3 class="center">Courses</h3>
+
+<% if user_logged_in? %>
+  <div class='center'><%= link_to "New Course", new_course_path, class:'button back-white' %></div>
+<% end %>
+
 <% courses.each do |course| %>
   <row>
     <div class="six columns center teacher-row"><%= link_to(course.name, course, class:"button button-primary") %></div>

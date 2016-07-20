@@ -1,7 +1,17 @@
-<h1 class="center"><%= link_to('PokeCademy', root_path, class: 'center head')  %></h1>
-<div class="row center">
-  <%= link_to('Schools', schools_path, class: 'link button button-primary') %>
-  <%= link_to('Teachers', teachers_path, class: 'link button button-primary') %>
-  <%= link_to('Students', students_path, class: 'link button button-primary') %>
-  <%= link_to('Courses', courses_path, class: 'link button button-primary') %>
+<div class="back-black">
+  <h1 class="center"><%= link_to('PokeCademy', root_path, class: 'center head')  %></h1>
+  <div class="row center">
+    <%= link_to('Schools', schools_path, class: 'link button button-primary') %>
+    <%= link_to('Teachers', teachers_path, class: 'link button button-primary') %>
+    <%= link_to('Students', students_path, class: 'link button button-primary') %>
+    <%= link_to('Courses', courses_path, class: 'link button button-primary') %>
+    <%= link_to('Users', users_path, class: 'link button button-primary') %>
+  </div>
+  <% if user_logged_in? %>
+    <div class='center'><%= link_to "Sign Out", sessions_sign_out_path, method: :DELETE, class:'button back-white' %></div>
+    <h2 class='white center'>Welcome <%= current_user.name %>!</h2>
+  <% else %>
+    <div class='center'><%= link_to "Sign In", sessions_sign_in_path, class:'button back-white' %></div>
+    <div class='center'><%= link_to "Sign Up", new_user_path, class:'button back-white' %></div>
+  <% end %>
 </div>

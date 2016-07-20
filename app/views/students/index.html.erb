@@ -1,4 +1,9 @@
 <h3 class="center">Students</h3>
+
+<% if user_logged_in? %>
+  <div class='center'><%= link_to "New Student", new_student_path, class:'button back-white' %></div>
+<% end %>
+
 <% students.each do |student| %>
   <row>
     <div class="four columns center teacher-row"><%= link_to(student.name, student, class:"button button-primary") %></div>

@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  
   def show
     if Student.exists?(params[:id])
       render locals: { student: Student.find(params[:id]) }

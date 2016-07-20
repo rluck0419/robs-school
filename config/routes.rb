@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'sessions/sign_in'
+  delete 'sessions/sign_out'
+  post 'sessions/authenticate'
+
+  resources :users
   resources :courses
   resources :students
   resources :teachers

@@ -1,0 +1,13 @@
+<p class="center" id="notice"><%= notice %></p>
+<p class="center" id="alert"><%= alert %></p>
+
+<h2 class="center">Users</h2>
+
+<% @users.each do |user| %>
+  <div>
+    <p class="center teacher-row"><%= link_to user.name, user, class:"button button-primary"%></p>
+    <p class="center teacher-row"><%= mail_to user.email, user.email, class:"button button-primary" %></p>
+    <p class="center teacher-row"><%= link_to 'Edit', edit_user_path(user), class:"button back-white" %></p>
+    <p class="center teacher-row school"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class:"button back-white" %></p>
+  </div>
+<% end %>

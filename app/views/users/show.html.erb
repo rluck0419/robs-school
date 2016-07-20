@@ -1,0 +1,11 @@
+<p class="center" id="notice"><%= notice %></p>
+
+<h3 class="white center">User:</h3>
+<div class="center"><%= link_to @user.name, @user, class:"button button-primary" %></div>
+
+<h5 class="white center">Email:</h5>
+<div class="center"><%= mail_to @user.email, @user.email, class:"button button-primary" %></div>
+
+<div class="center"><%= link_to 'Edit', edit_user_path(@user), class:'button back-white' %></div>
+<div class="center"><%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, class:"button back-white" %></div>
+<div class="center"><%= link_to 'Back', users_path, class:'button back-white' %></div>

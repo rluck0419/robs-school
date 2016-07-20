@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  
   def show
     if Course.exists?(params[:id])
       render template: 'courses/show.html.erb', locals: { course: Course.find(params[:id]) }
