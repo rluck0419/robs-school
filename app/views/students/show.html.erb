@@ -1,3 +1,8 @@
-<h3>Student: <%= link_to(student.name, student) %></h3>
-<h4>Teacher: <%= link_to(student.teacher.name, student.teacher) %></h4>
-<h5>School: <%= link_to(student.teacher.school.name, student.teacher.school) %></h5>
+<h3 class="white center">Student:</h3>
+<div class="center"><%= link_to(student.name, student, class:"button button-primary") %></div>
+
+<h4 class="white center">Teacher:</h4>
+<div class="center"><%= link_to(student.teacher.name, student.teacher, class:"button back-white") %></div>
+
+<h5 class="white center">School:</h5>
+<div class="center"><%= link_to(student.teacher.school.name, student.teacher.school, class:"button back-white") %></div>

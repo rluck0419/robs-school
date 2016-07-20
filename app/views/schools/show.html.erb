@@ -1,14 +1,17 @@
-<h3 class="white center">School: <%= link_to(school.name, school, class:'button button-primary') %></h3>
+<h3 class="white center">School: </h3>
+<div class="white center"><%= link_to(school.name, school, class:'button button-primary') %></div>
 
-<div class="white center">Teachers (<%= school.teachers.count %>): </div>
 <% school.teachers.each do |teacher| %>
-  <h4 class="center"><%= link_to(teacher.name, teacher, class:'button button-primary') %></h4>
+  <h4 class="white center">Teacher: </h4>
+  <div class="center"><%= link_to(teacher.name, teacher, class:'button button-primary') %></div>
+  <h5 class="white center">Students: </h5>
   <% teacher.students.each do |student| %>
     <div class="center"><%= link_to(student.name, student, class:'button back-white') %></div>
   <% end %>
 <% end %>
 
-<div>Students:
+<div class="white center">Teachers: <%= school.teachers.count %></div>
+<div class="white center">Students:
   <% count = 0 %>
   <% school.teachers.each do |teacher| %>
     <% count += teacher.students.count %>
