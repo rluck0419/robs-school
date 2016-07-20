@@ -13,7 +13,7 @@ class SchoolsController < ApplicationController
 
   def new
     render locals: {
-      school: School.find(params[:id])
+      school: School.new
     }
   end
 
