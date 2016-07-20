@@ -1,4 +1,4 @@
-<h3>Schools: </h3>
+<h3 class="center">Schools</h3>
 <% schools.each do |school| %>
-  <div><%= link_to(school.name, school) %></div>
+  <div class="twelve columns center"><%= link_to(school.name, school, class: 'link button button-primary center') %></div>
 <% end %>

@@ -1,10 +1,10 @@
-<h3>School: <%= link_to(school.name, school) %></h3>
+<h3 class="white center">School: <%= link_to(school.name, school, class:'button button-primary') %></h3>
 
-<div>Teachers (<%= school.teachers.count %>): </div>
+<div class="white center">Teachers (<%= school.teachers.count %>): </div>
 <% school.teachers.each do |teacher| %>
-  <h4><%= link_to(teacher.name, teacher) %></h4>
+  <h4 class="center"><%= link_to(teacher.name, teacher, class:'button button-primary') %></h4>
   <% teacher.students.each do |student| %>
-    <div><%= link_to(student.name, student) %></div>
+    <div class="center"><%= link_to(student.name, student, class:'button back-white') %></div>
   <% end %>
 <% end %>
 

@@ -14,3 +14,33 @@
  *= require_tree .
  *= require_self
  */
+.back {
+  background-color: #003850;
+}
+
+.center {
+  text-align: center;
+  color: white;
+}
+
+.head {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+}
+
+.back-white {
+  background-color: white;
+}
+
+.teacher-row {
+  padding-top: 1em;
+  background-color: lightblue;
+}
+
+.school {
+  border-bottom: 0.1em solid black;
+}
