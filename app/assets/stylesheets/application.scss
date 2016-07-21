@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.changes {
+    padding-top: 3em;
+}
+
 .back {
   background-color: #003850;
   margin: 0;
@@ -50,4 +54,16 @@
 .school {
   border-bottom: 0.1em solid black;
   margin-bottom: 0.5em;
+}
+
+@media (min-width:550px) {
+  .columns {
+    margin-left: 0%;
+  }
+  .six.columns{
+    width:50%;
+  }
+  .four.columns{
+    width:33.3%;
+  }
 }

@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  
+
   def show
     if Course.exists?(params[:id])
       render template: 'courses/show.html.erb', locals: { course: Course.find(params[:id]) }
@@ -29,9 +29,15 @@ class CoursesController < ApplicationController
   end
 
   def edit
-    render locals: {
-      course: Course.find(params[:id])
-    }
+    course = Course.find(params[:id])
+    # if current_user.school_id == course.school.id
+      render locals: {
+        course: course
+      }
+    # else
+    #   flash[:notice] = "You must be enrolled in this school to edit this course."
+    #   redirect_to course_path(course)
+    # end
   end
 
   def update

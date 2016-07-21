@@ -6,3 +6,8 @@
 
 <h5 class="white center">School:</h5>
 <div class="center"><%= link_to(student.teacher.school.name, student.teacher.school, class:"button back-white") %></div>
+
+<div class='changes'>
+  <div class="center"><%= link_to 'Edit Student', edit_student_path(student), class:"button back-white" %></div>
+  <div class="center"><%= link_to 'Destroy Student', student, method: :DELETE, data: { confirm: 'Are you sure?' }, class:"button back-white" %></div>
+</div>

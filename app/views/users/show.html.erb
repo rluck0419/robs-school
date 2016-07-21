@@ -6,6 +6,9 @@
 <h5 class="white center">Email:</h5>
 <div class="center"><%= mail_to @user.email, @user.email, class:"button button-primary" %></div>
 
-<div class="center"><%= link_to 'Edit', edit_user_path(@user), class:'button back-white' %></div>
-<div class="center"><%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, class:"button back-white" %></div>
+<h5 class="white center">School:</h5>
+<div class="center"><%= link_to School.find(@user.school_id).name, School.find(@user.school_id), class:"button button-primary" %></div>
+
+<div class="center"><%= link_to 'Edit User', edit_user_path(@user), class:'button back-white' %></div>
+<div class="center"><%= link_to 'Destroy User', @user, method: :DELETE, data: { confirm: 'Are you sure?' }, class:"button back-white" %></div>
 <div class="center"><%= link_to 'Back', users_path, class:'button back-white' %></div>

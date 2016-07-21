@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
+  def user_in_school?
+
+  end
+
   def authenticate_user!
     unless user_logged_in?
       flash[:alert] = "You must be signed in to do that."
